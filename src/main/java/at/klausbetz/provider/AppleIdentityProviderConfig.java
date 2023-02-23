@@ -9,6 +9,7 @@ public class AppleIdentityProviderConfig extends OIDCIdentityProviderConfig {
     private static final String KEY_ID = "keyId";
     private static final String P8_CONTENT = "p8Content";
     private static final String DISPLAY_ICON_CLASSES = "fa fa-apple";
+    private static final String DISPLAY_NAME = "displayName";
 
     public AppleIdentityProviderConfig(IdentityProviderModel identityProviderModel) {
         super(identityProviderModel);
@@ -49,5 +50,15 @@ public class AppleIdentityProviderConfig extends OIDCIdentityProviderConfig {
     @Override
     public String getDisplayIconClasses() {
         return DISPLAY_ICON_CLASSES;
+    }
+
+    @Override
+    public String getDisplayName() {
+        return getConfig().get(DISPLAY_NAME);
+    }
+
+    @Override
+    public void setDisplayName(String displayName) {
+        getConfig().put(DISPLAY_NAME, displayName);
     }
 }

@@ -25,6 +25,13 @@
     </fieldset>
     <fieldset>
       <div class="form-group clearfix">
+        <label class="col-md-2 control-label" for="displayName"><span class="required">*</span> {{:: 'appleId.displayName' | translate}}</label>
+        <div class="col-md-6">
+          <input class="form-control" id="displayName" type="text" ng-model="identityProvider.config.displayName" required>
+        </div>
+        <kc-tooltip>{{:: 'identity-provider.apple-displayName.tooltip' | translate}}</kc-tooltip>
+      </div>
+      <div class="form-group clearfix">
         <label class="col-md-2 control-label" for="clientId"><span class="required">*</span> {{:: 'appleId.serviceId' | translate}}</label>
         <div class="col-md-6">
           <input class="form-control" id="clientId" type="text" ng-model="identityProvider.config.clientId" required>
